@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/MarcusPuust/vp1#readme",
   "dependencies": {
-    "express": "~4.16.1"
+    "ejs": "^3.1.10",
+    "express": "^4.21.0"
   }
 }
