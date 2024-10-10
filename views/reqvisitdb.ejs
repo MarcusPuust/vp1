@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="utf-8">
+<title>Marcus Puust</title>
+<script src="file.js" defer></script>
+</head>
+<body>
+<img src="/banner/vp_banner_2024.png" alt="Veebiprogrammeerimise 2024 aasta kursuse bänner">
+  <h1>Marcus Puust</h1>
+  <p>See leht on loodud õppetöö raames <a href="https://www.tlu.ee" target="_blank">Tallinna ülikoolis</a> ja ei sisalda tõsiseltvõetavat sisu.</p>
+  <hr>
+  
+<hr>
+<ul>
+	<li><a href="/">Avaleht</a></li>
+</ul>
+<hr>
+<h2>Pane oma nimi kirja</h2>
+<form method="POST">
+	<label for="firstNameInput">Eesnimi </label>
+<input type="text" id="firstNameInput" name="firstNameInput" placeholder="Eesnimi ..." value="<%= firstName %>">
+<br> 
+<label for="lastNameInput">Perekonnanimi </label>
+<input type="text" id="lastNameInput" name="lastNameInput" placeholder="Perekonnanimi ..." value="<%= lastName %>">
+<br>
+<input type="submit" id="regSubmit" name="regSubmit" value="Salvesta">
+</form>
+<p><%= notice %></p>
+
+</body>
+</html>
