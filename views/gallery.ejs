@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="et">
+  <head>
+    <meta charset="utf-8" />
+    <title>Marcus</title>
+    <link rel="stylesheet" href="/style/gallery.css">
+    <link rel="stylesheet" href="/style/modal.css">
+    <script defer src="/script/gallery.js"></script>
+  </head>
+  <body>
+    <img src="/banner/vp_banner_2024.png" alt="Veebiprogrammeerimine 2024.aasta banner"></img>
+    <h1>Marcus Puust</h1>
+    <p>see leht on loodud õppetöö raames <a href="https:/www.tlu.ee" target="_blank">Tallinna Ülikoolis</a> ja ei sisalda tõsiseltvõetavat sisu</p>
+    <hr>
+    <% if (user) { %>
+      <p>Sisse loginud kasutaja:  <%= user.firstName %> <%= user.lastName %></p>
+    <% } %>
+    <dialog id="modal" class="modalarea">
+      <span id="modalClose" class="modalclose">&times;</span>
+      <div class="modalhorizontal">
+        <div class="modalvertical">
+          <p id="modalCaption"></p>
+          <img id="modalImage" src="/pics/empty.png" alt="galeriipilt">
+        </div>
+      </div>
+    </dialog>
+    <ul>
+      <li><a href="/home">Avaleht</a></li>
+    </ul>
+    <hr>
+    <h1>Galerii</h1>
+    <p><%- links %></p>
+    <div class="gallery" id="gallery">
+    <% if (listData.length === 0) { %>
+      <p>Ei leitud ühtegi pilti.</p>
+      <% } else { %>
+          <% listData.forEach(image => { %>
+          <img src="<%= image.href %><%= image.filename %>" alt="<%= image.alt %>" width="200" class="thumbs" data-filename="<%= image.filename %>"> 
+      <% }); %>
+    <% } %>
+    </div>
+  </body>
+</html>

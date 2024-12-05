@@ -1,0 +1,35 @@
+<<!doctype html>
+<html lang="et">
+  <head>
+    <meta charset="utf-8" />
+    <title>Marcus</title>
+  </head>
+  <body>
+    <img src="/banner/vp_banner_2024.png" alt="Veebiprogrammeerimine 2024.aasta banner"></img>
+    <h1>Marcus Puust</h1>
+    <p>see leht on loodud õppetöö raames <a href="https:/www.tlu.ee" target="_blank">Tallinna Ülikoolis</a> ja ei sisalda tõsiseltvõetavat sisu</p>
+    <hr>
+    <% if (user) { %>
+      <p>Sisse loginud kasutaja:  <%= user.firstName %> <%= user.lastName %></p>
+    <% } %>
+    <ul>
+      <li><a href="/home">Avalehele</a></li>
+	  <li><a href="/news">Uudiste avalehele</a></li>
+    </ul>
+    <hr>
+    <h1>Uudised</h1>
+    <% if (newsList.length === 0) { %>
+        <p>Ei leitud ühtegi uudist.</p>
+    <% } else { %>
+        <ul>
+            <% newsList.forEach(news => { %>
+                <li>
+                    <h2><%= news.news_title %></h2>
+                    <p>Lisamise kuupäev: <%= news.news_date %></p>
+                    <pre>Sisu: <%= news.news_text %></pre>
+                </li>
+            <% }); %>
+        </ul>
+    <% } %>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="et">
+  <head>
+    <meta charset="utf-8" />
+    <title>Marcus</title>
+  </head>
+  <body>
+    <img src="/banner/vp_banner_2024.png" alt="Veebiprogrammeerimine 2024.aasta banner"></img>
+    <h1>Marcus Puust</h1>
+    <p>see leht on loodud õppetöö raames <a href="https:/www.tlu.ee" target="_blank">Tallinna Ülikoolis</a> ja ei sisalda tõsiseltvõetavat sisu</p>
+    <hr>
+    <% if (user) { %>
+      <p>Sisse loginud kasutaja:  <%= user.firstName %> <%= user.lastName %></p>
+    <% } %>
+    <ul>
+      <li><a href="/home">Avalehele</a></li>
+      <li><a href="/eksam">Eksami avaleht</a></li>
+	  <li><a href="/kokkuvote">Viljavedude kokkuvõte</a></li>
+    </ul>
+    <hr>
+    <h2>Lisa vedu</h2>
+    <form method="post">
+      <label for="truckInput">Veoauto numbrimärk</label><br>
+      <input type="text" id="truckInput" name="truckInput" placeholder="123ABC"><br>
+      <label for="weightIn">Veoauto kaal sisenemisel(kg)</label><br>
+      <input type="text" id="weightIn" name="weightIn" placeholder="Veoauto kaal sisenemisel.."><br>
+      <label for="weightOut">Veoauto kaal väljumisel(kg)</label><br>
+      <input type="text" id="weightOut" name="weightOut" placeholder="Veoauto kaal väljumisel.."><br>
+      <input type="submit" id="newsSubmit" name="newsSubmit" value="Salvesta">
+    </form>
+    <p><%= notice %></p>
+  </body>
+</html>

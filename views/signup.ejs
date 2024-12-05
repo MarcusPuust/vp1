@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="utf-8">
+  <title>Marcus Puust</title>
+</head>
+<body>
+  <img src="/banner/vp_banner_2024.png" alt="veebiprogrammeerimise 2024 aasta kursuse bänner">
+  <h1>Kasutajakonto loomine</h1>
+  <ul>
+	<li><a href="/">Avalehele</a></li>
+  </ul>
+  <hr>
+  <form method="POST">
+    <label for="firstNameInput">Sisesta oma eesnimi: </label>
+    <input type="text" id="firstNameInput" name="firstNameInput" placeholder="Eesnimi ..." value="<%= locals.firstNameInput || '' %>">
+	<br>
+	<label for="lastNameInput">Sisesta oma perekonnanimi: </label>
+    <input type="text" id="lastNameInput" name="lastNameInput" placeholder="Perekonnanimi ..." value="<%= locals.lastNameInput || '' %>">
+	<br>
+	<label for="birthDateInput">Sisesta sünnikuupäev: </label>
+	<input type="date" id="birthDateInput" name="birthDateInput" value="<%= locals.birthDateInput || '' %>">
+	<br>
+	<input type="radio" id="genderInput1" name="genderInput" value="1" checked <%= locals.genderInput == '1' ? 'checked' : '' %>>
+	<label for="genderInput1">Mees</label>
+	<br>
+	<input type="radio" id="genderInput2" name="genderInput" value="2" <%= locals.genderInput == '2' ? 'checked' : '' %>>
+	<label for="genderInput2">Naine</label>
+	<br>
+	<label for="emailInput">E-mail (kasutajatunnuseks)</label>
+	<input type="email" id="emailInput" name="emailInput" placeholder="Sinu e-mail ...." value="<%= locals.emailInput || '' %>">
+	<br>
+	<label for="passwordInput">Salasõna (min 8 märki)</label>
+	<input type="password" id="passwordInput" name="passwordInput">
+	<br>
+	<label for="confirmPasswordInput">Korda salasõna</label>
+	<input type="password" id="confirmPasswordInput" name="confirmPasswordInput">
+	<br>
+	<input type="submit" id="userSubmit" name="userSubmit" value="Loo kasutajakonto">
+  </form>
+  <p><%= locals.notice || "Ootel" %></p>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="et">
+  <head>
+    <meta charset="utf-8" />
+    <title>Marcus</title>
+  </head>
+  <body>
+    <img src="/banner/vp_banner_2024.png" alt="Veebiprogrammeerimine 2024.aasta banner"></img>
+    <h1>Marcus Puust</h1>
+    <p>see leht on loodud õppetöö raames<a href="https:/www.tlu.ee" target="_blank">Tallinna Ülikoolis</a> ja ei sisalda tõsiseltvõetavat sisu</p>
+    <hr>
+    <% if (user) { %>
+      <p>Sisse loginud kasutaja:  <%= user.firstName %> <%= user.lastName %></p>
+    <% } %>
+    <ul>
+      <li><a href="/home">Avalehele</a></li>
+      <li><a href="/eksam">Eksami avaleht</a></li>
+	  <li><a href="/sisestamine">Viljaveo sisestamine</a></li>
+    </ul>
+    <hr>
+    <h2>Sisestatud veoandmed</h2>
+
+<!-- Rippmenüü kaubiku valimiseks -->
+<form action="/kokkuvote" method="GET">
+  <label for="truck">Vali kaubik:</label>
+  <select name="truck" id="truck">
+    <option value="">-- Valige kaubik --</option>
+    <% visits.forEach(function(item) { %>
+      <!-- Kui kaubik on valitud, siis on see rippmenüüs 'selected' -->
+      <option value="<%= item.truck %>" <%= selectedTruck === item.truck ? 'selected' : '' %>><%= item.truck %></option>
+    <% }); %>
+  </select>
+  <button type="submit">Otsi</button>
+</form>
+
+<% if (selectedTruck) { %> <!-- Kuvame andmed ainult siis, kui kaubik on valitud -->
+  <ul>
+    <% visits.forEach(function(item) { %>
+      <li>
+        <strong>Kaubik:</strong> <%= item.truck %><br>
+        <strong>Kaal sisenemisel:</strong> <%= item.weight_in %> kg<br>
+        <strong>Kaal väljumisel:</strong> <%= item.weight_out %> kg<br>
+        <strong>Viljamass:</strong> <%= item.viljamass %> kg
+      </li>
+    <% }); %>
+  </ul>
+<% } else { %>
+  <p>Palun vali kaubik, et vaadata vedu.</p>
+<% } %>
+
+</body>
+</html>
+
+    
+
+

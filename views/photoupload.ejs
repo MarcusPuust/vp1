@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="et">
+  <head>
+    <meta charset="utf-8" />
+    <title>Marcus</title>
+  </head>
+  <body>
+    <img src="/banner/vp_banner_2024.png" alt="Veebiprogrammeerimine 2024.aasta banner"></img>
+    <h1>Marcus Puust</h1>
+    <p>see leht on loodud õppetöö raames <a href="https:/www.tlu.ee" target="_blank">Tallinna Ülikoolis</a> ja ei sisalda tõsiseltvõetavat sisu</p>
+    <hr>
+    <% if (user) { %>
+      <p>Sisse loginud kasutaja:  <%= user.firstName %> <%= user.lastName %></p>
+    <% } %>
+    <ul>
+      <li><a href="/home">Avaleht</a></li>
+    </ul>
+    <hr>
+    <h2>Galerii pildi üleslaadimine</h2>
+    <form method="post" enctype="multipart/form-data">
+      <label for="photoInput">Vali soovitud pildifail:</label><br>
+      <input type="file" id="photoInput" name="photoInput"><br>
+      <label for="altInput">Pildi alternatiivtekst</label><br>
+      <input type="text" id="altInput" name="altInput" placeholder="Pildi alternatiivtekst..."><br>
+      <hr>
+      <input type="radio" id="privacyInput1" name="privacyInput" value="1" checked>
+      <label for="privacyInput1">Privaatne (naed ainult ise)</label>
+      <br>
+      <input type="radio" id="privacyInput2" name="privacyInput" value="2">
+      <label for="privacyInput2">Ainult sisseloginud kasutajale</label>
+      <br>
+      <input type="radio" id="privacyInput3" name="privacyInput" value="3">
+      <label for="privacyInput3">Avalik</label>
+      <br>
+      <input type="submit" id="photoSubmit" name="photoSubmit" value="Lae üles">
+    </form>
+    <p><%= notice %></p>
+  </body>
+</html>

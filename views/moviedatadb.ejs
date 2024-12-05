@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="et">
+  <head>
+    <meta charset="utf-8" />
+    <title>Marcus</title>
+  </head>
+  <body>
+    <img src="/banner/vp_banner_2024.png" alt="Veebiprogrammeerimine 2024.aasta banner"></img>
+    <h1>Marcus Puust</h1>
+    <p>see leht on loodud õppetöö raames <a href="https:/www.tlu.ee" target="_blank">Tallinna Ülikoolis</a> ja ei sisalda tõsiseltvõetavat sisu</p>
+    <hr>
+    <% if (user) { %>
+      <p>Sisse loginud kasutaja:  <%= user.firstName %> <%= user.lastName %></p>
+    <% } %>
+    <ul>
+      <li><a href="/home">Avalehele</a></li>
+    </ul>
+    <hr>
+    <p><%= notice %></p>
+    <h3>Sisesta filmi tegelane</h3>
+    <!-- Filmi tegelase lisamine, filmi lisamine, filmi positsiooni lisamine -->
+    <form action="/add-person" method="post">
+        <label for="firstName">Eesnimi:</label><br>
+        <input type="text" id="firstName" name="first_name"><br>
+        <label for="lastName">Perekonnanimi:</label><br>
+        <input type="text" id="lastName" name="last_name"><br>
+        <label for="birthDate">Sünnikuupäev:</label><br>
+        <input type="date" id="birthDate" name="birth_date"><br>
+        <input type="submit" name="personSubmit" value="Lisa tegelane">
+    </form>
+    <hr>
+    <h3>Sisesta film</h3>
+    <form action="/add-movie" method="post">
+        <label for="title">Pealkiri:</label><br>
+        <input type="text" id="title" name="title"><br>
+        <label for="productionYear">Tootmisaasta:</label><br>
+        <input type="number" id="productionYear" name="production_year"><br>
+        <label for="duration">Kestus (min):</label><br>
+        <input type="number" id="duration" name="duration"><br>
+        <label for="description">Kirjeldus:</label><br>
+        <input type="text" id="description" name="description"><br>
+        <input type="submit" name="filmSubmit" value="Lisa film"><br>
+    </form>
+    <hr>
+    <h3>Sisesta filmi tegelase positsioon</h3>
+    <form action="/add-position" method="post">
+        <label for="position">Positsioon:</label><br>
+        <input type="text" id="positionName" name="position_name"><br>
+        <label for="description">Kirjeldus:</label><br>
+        <input type="text" id="description" name="description"><br>
+        <input type="submit" name="positionSubmit" value="Lisa positsioon">
+    </form>
+  </body>
+</html>

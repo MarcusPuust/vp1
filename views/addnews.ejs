@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="et">
+  <head>
+    <meta charset="utf-8" />
+    <title>Marcus</title>
+  </head>
+  <body>
+    <img src="/banner/vp_banner_2024.png" alt="Veebiprogrammeerimine 2024.aasta banner"></img>
+    <h1>Marcus Puust</h1>
+    <p>see leht on loodud õppetöö raames <a href="https:/www.tlu.ee" target="_blank">Tallinna Ülikoolis</a> ja ei sisalda tõsiseltvõetavat sisu</p>
+    <hr>
+    <% if (user) { %>
+      <p>Sisse loginud kasutaja:  <%= user.firstName %> <%= user.lastName %></p>
+    <% } %>
+    <ul>
+      <li><a href="/home">Avalehele</a></li>
+	  <li><a href="/news">Uudiste avalehele</a></li>
+    </ul>
+    <hr>
+    <h2>Lisa uudis</h2>
+    <form method="post">
+      <label for="titleInput">Uudise pealkiri</label><br>
+      <input type="text" id="titleInput" name="titleInput" placeholder="Uudise pealkiri..."><br>
+      <label for="newsInput">Uudise sisu</label><br>
+      <textarea id="newsInput" name="newsInput" placeholder="Uudise sisu..." cols="100" rows="5"></textarea><br>
+      <label for="expireInput">Uudise aegumiskuupäev: </label><br>
+      <input type="date" id="expireInput" name="expireInput" value="<%= expired %>"><br>
+      <input type="submit" id="newsSubmit" name="newsSubmit" value="Salvesta">
+    </form>
+    <p><%= notice %></p>
+  </body>
+</html>

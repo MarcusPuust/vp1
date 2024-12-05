@@ -1,3 +1,19 @@
 Külastuste logi:
 
 CREATE TABLE `if24_marcus_pu`.`vp1texting` (`id` INT(11) NOT NULL AUTO_INCREMENT , `first_name` VARCHAR(100) NOT NULL , `last_name` VARCHAR(100) NOT NULL , `visit_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+vp1photos
+
+CREATE TABLE `if24_marcus_pu`.`vp1photos` (`id` INT(11) NOT NULL AUTO_INCREMENT , `file_name` VARCHAR(140) NOT NULL , `orig_name` VARCHAR(140) NOT NULL , `alt_text` VARCHAR(254) NULL , `privacy` INT(1) NOT NULL , `user_id` INT NOT NULL , `added` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP , `deleted` DATETIME NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+vp1_news
+
+CREATE TABLE `if24_marcus_pu`.`vp1_news` (`id` INT(11) NOT NULL AUTO_INCREMENT , `news_title` VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_estonian_ci NOT NULL , `news_text` TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_estonian_ci NOT NULL , `news_date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP , `expire_date` DATE NOT NULL , `user_id` INT(11) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+vp1users
+
+CREATE TABLE `if24_marcus_pu`.`vp1users` (`id` INT(11) NOT NULL AUTO_INCREMENT , `first_name` VARCHAR(140) NOT NULL , `last_name` VARCHAR(100) NOT NULL , `birth_date` DATE NOT NULL , `gender` INT(1) NOT NULL , `email` VARCHAR(250) NOT NULL , `password` VARCHAR(60) NOT NULL , `created` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+vp1viljavedu
+
+CREATE TABLE `if24_marcus_pu`.`vp1viljavedu` (`id` INT(5) NOT NULL AUTO_INCREMENT , `truck` VARCHAR(6) NOT NULL , `weight_in` INT(6) NOT NULL , `weight_out` INT(6) NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB; 

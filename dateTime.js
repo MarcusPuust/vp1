@@ -17,13 +17,13 @@ const daysBetween = function(gDate){
 	let diff = today - anotherDay;
 	let diffDays = Math.floor(diff / (1000 * 60 * 60 * 24));
 	if(today == anotherDay){
-		notice = "täna";
+		notice = "tÃ¤na";
 	}
 	else if(today < anotherDay){
-		notice = Math.abs(diffDays) + " päeva pärast";
+		notice = Math.abs(diffDays) + " pÃ¤eva pÃ¤rast";
 	}
 	else {
-		notice = diffDays + " päeva tagasi";
+		notice = diffDays + " pÃ¤eva tagasi";
 	}
 	return notice;
 }

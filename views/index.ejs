@@ -1,24 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="et">
-<head>
-<meta charset="utf-8">
-<title>Marcus Puust</title>
-<script src="file.js" defer></script>
-</head>
-<body>
-<img src="/banner/vp_banner_2024.png" alt="Veebiprogrammeerimise 2024 aasta kursuse bänner">
-  <h1>Marcus Puust</h1>
-  <p>See leht on loodud õppetöö raames <a href="https://www.tlu.ee" target="_blank">Tallinna ülikoolis</a> ja ei sisalda tõsiseltvõetavat sisu.</p>
- 
-<hr>
-<ul>
-	<li><a href="/timenow">Ajainfo</a></li>
-	<li><a href="/vanasonad">Vanasõnad</a></li>
-	<li><a href="/reqvisit">Registreeri oma külastus (txt põhine)</a></li>
-	<li><a href="/reqvisitdb">Registreeri oma külastus</a></li>
-    <li><a href="/visitlog">Külastuslogi</a></li>
-	<li><a href="/eestifilm">Eesti film</a></li>
-</ul>
+  <head>
+    <meta charset="utf-8" />
+    <title>Marcus</title>
+  </head>
+  <body>
+    <img src="/banner/vp_banner_2024.png" alt="Veebiprogrammeerimine 2024.aasta banner"></img>
+    <h1>Marcus Puust</h1>
+    <p>see leht on loodud õppetöö raames <a href="https:/www.tlu.ee" target="_blank">Tallinna Ülikoolis</a> ja ei sisalda tõsiseltvõetavat sisu</p>
+    <p>Semestri algusest on möödas: <%= daysPast %> päeva</p>
+    <p>Semestri lõpuni on jäänud: <%= daysLeft %> päeva</p>
 
-</body>
+    <% if (latestNews) { %>
+      <h2>Viimane Uudis</h2>
+      <h3><%= latestNews.news_title %></h3>
+      <p>Lisamise kuupäev: <%= latestNews.news_date %></p>
+      <pre>Sisu: <%= latestNews.news_text %></pre>
+    <% } else { %>
+        <p>Hetkel pole ühtegi uudist!</p>
+    <% } %>
+    <hr>
+    <ul>
+      <li><a href="/signup">Loo kasutajakonto</a></li>
+      <li><a href="/signin">Logi sisse</a></li>
+      <li><a href="/timenow">Ajainfo</a></li>
+      <li><a href="/vanasonad">Vanasõnad</a></li>
+      <li><a href="/reqvisit">Registreeri (tekst)</a></li>
+      <li><a href="/reqvisitdb">Pane oma nimi andmebaasi kirja</a></li>
+    </ul>
+  </body>
 </html>
+

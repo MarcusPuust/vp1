@@ -12,17 +12,11 @@
     <% if (user) { %>
       <p>Sisse loginud kasutaja:  <%= user.firstName %> <%= user.lastName %></p>
     <% } %>
-    <h2>Eesti film</h2>
+    <h2>Eksam</h2>
     <ul>
-      <li><a href="/home">Avaleht</a></li>
-      <li><a href="/eestifilm">Eesti filmi avaleht</a></li>
-    </ul>
-    <hr>
-    <h2>Eesti filmi tegelased</h2>
-    <ul>
-      <% persons.forEach(function(item){ %>
-        <li><%= item.first_name %> <%= item.last_name %>, sündinud: <%= item.birth_date %></li>
-      <% }); %>
+    <li><a href="/home">Avaleht</a></li>
+    <li><a href="/sisestamine">Viljaveo andmete sisestamine</a></li>
+	  <li><a href="/kokkuvote">Viljaveo kokkuvõtted</a></li>
     </ul>
   </body>
 </html>
